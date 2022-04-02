@@ -6,6 +6,7 @@ import converter.dto.TransactionInfo;
 import converter.entity.Operation;
 import converter.service.ExchangeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,7 +46,7 @@ public class WebController {
 
     @PostMapping("/transactionInfo")
     public Operation saveTransactionInfo(@RequestBody TransactionInfo transactionInfo) {
-      return exchangeService.saveOperation(transactionInfo);
+        return exchangeService.saveOperation(transactionInfo);
     }
 
     @GetMapping("/stats")
