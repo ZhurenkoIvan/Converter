@@ -6,7 +6,6 @@ import converter.dto.ProcessedExchangeJson;
 import converter.dto.Statistic;
 import converter.dto.TransactionInfo;
 import converter.entity.Operation;
-import converter.entity.User;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,18 +64,5 @@ public class ExchangeServiceImpl implements ExchangeService {
     public Statistic getStatistic() {
         return operationDAO.getStatistic();
     }
-
-    @Override
-    @Transactional
-    public User getUser() {
-        return null;
-    }
-
-    @Override
-    @Transactional
-    public User saveUser() {
-        return null;
-    }
-
 
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ConverterProjectApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConverterProjectApplication.class, args);
+       SpringApplication.run(ConverterProjectApplication.class, args);
     }
 
 }
