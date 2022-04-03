@@ -20,11 +20,6 @@ public class WebController {
     @Autowired
     private ExchangeService exchangeService;
 
-    @GetMapping("")
-    public String startPage() {
-        return "index";
-    }
-
     @GetMapping("/exchangeRates")
     public ProcessedExchangeJson getExchangeRates() {
         ProcessedExchangeJson processedExchangeJson = exchangeService.getExchangeRates();
