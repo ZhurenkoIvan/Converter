@@ -57,27 +57,25 @@ btnSubmit.addEventListener('click',async function () {
   const input1 = document.querySelector('#available-currency').value
   const input2 = document.querySelector('#purchased-currency').value
 
-  let TransactionInfo = {}
+  let transactionInfo = {}
 
   const today = new Date()
  
-  TransactionInfo.idUser = Math.floor(Math.random());
-  TransactionInfo.fromCurrency = parseFloat(input1);
-  TransactionInfo.fromCurrencyAmount = selectNow.value;
-  TransactionInfo.toCurrency = parseFloat(input2);
-  TransactionInfo.toCurrencyAmount = selectSale.value;
-  TransactionInfo.transactionDate = today.getTime();
-
   const response = await fetch(hostInfo, {
     method: 'POST',
     body: JSON.stringify({
-      TransactionInfo
+      idUser: Math.floor(Math.random()),
+      fromCurrency: selectNow.value,
+      fromCurrencyAmount: parseFloat(input1),
+      toCurrency: selectSale.value,
+      toCurrencyAmount:  parseFloat(input2),
+      transactionDate: today.getTime()
     }),
     headers: {
       'Content-Type': 'application/json',
     }
   });
-
+  console.log(transactionInfo)
   const CurrencyItem = await response.json();
   console.log(CurrencyItem);
 })
